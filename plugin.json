@@ -1,0 +1,11 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "spec-skill-generator",
+  "version": "1.0.0",
+  "description": "Lê a especificação viva do projeto e cria ou atualiza as skills do arquiteto, backend, frontend e tester.",
+  "author": {
+    "name": "Mateus Marwell",
+    "email": "mateus.marwell@outlook.com"
+  },
+  "license": "MIT"
+}
