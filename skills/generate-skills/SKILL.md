@@ -58,4 +58,5 @@ Transform the project specification into four living, updatable skills that are 
 
 9. **Final Report:**
    - Display the detected technologies, altered/preserved files, conflicts, and git status.
+   - **CRITICAL:** If any `suggested_skills` were added to the manifest, you MUST explicitly list them in your final chat response to the user, explaining why they were suggested and instructing the user to run the `/generate-skill-suggest` skill to create them.
    - **CHAT LANGUAGE RULE:** Explain your final response and chat messages in the language the user is currently writing in (e.g., Portuguese), even though you just generated all files in English.
