@@ -16,16 +16,16 @@ Transform the living specification of the project (usually located in `.spec/ini
 - `.agents/skills/spec-skill-generator/SKILL.md`: The main skill that triggers the generation.
 - `.agents/skills/spec-skill-generator/references/`: Rules for preservation (`regeneration-rules.md`), output contract (`output-contract.md`), and manifest schema (`manifest-schema.json`).
 - `.agents/skills/spec-skill-generator/scripts/validate-generated-skills.py`: Python script used to ensure the integrity of the generated skills.
-- `.agents/workflows/generate-skills.md`: Workflow containing chat commands to trigger the plugin.
+- `.agents/commands/`: Folder containing native Antigravity UI slash commands (`generate-skills`, `generate-skill-suggest`, `check-skills`, `force-generate-skills`).
 
 ## How to Use (Workflow Commands)
 
-In the Antigravity chat, you can invoke:
+In the Antigravity chat, simply type `/` to see the native commands autocompleted:
 
-- `/generate-skills` - Automatically identifies whether to generate (new project) or regenerate (existing project).
-- `/generate-skills check` - Performs a dry-run without modifying any files.
-- `/generate-skills force` - Forces recreation, ignoring the hash in the manifest.
-- `/generate-skill-suggest [skill-name]` - Generates additional specialized skills suggested by the AI based on the project's infrastructure.
+- `/spec-skill-generator:generate-skills` - Automatically identifies whether to generate (new project) or regenerate (existing project).
+- `/spec-skill-generator:check-skills` - Performs a dry-run without modifying any files.
+- `/spec-skill-generator:force-generate-skills` - Forces recreation, ignoring the hash in the manifest.
+- `/spec-skill-generator:generate-skill-suggest [skill-name]` - Generates additional specialized skills suggested by the AI based on the project's infrastructure.
 
 ## Customization and Safety
 
