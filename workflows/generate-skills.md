@@ -14,6 +14,10 @@ Este arquivo dita as regras e comandos para o bot executar o plugin `spec-skill-
   - Apenas analisa a stack e as mudanças entre fontes e manifesto, informando (dry-run) quais alterações aconteceriam sem modificar nenhum arquivo.
 - `/generate-skills force`
   - Força a regeneração de todas as skills, ignorando o estado atual do hash no manifesto.
+- `/generate-skill-suggest [nome-da-skill]`
+  - Cria as skills sugeridas pelo gerador (registradas em `suggested_skills` no manifesto).
+  - Se rodar **vazio**, cria todas as skills sugeridas.
+  - Se passar um **nome**, cria apenas a skill solicitada, desde que ela faça sentido para o projeto.
 
 ## Ações Exigidas ao Executar Comandos
 O agente deve:

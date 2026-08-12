@@ -30,24 +30,29 @@ Transformar a especificação do projeto em quatro skills vivas, atualizáveis e
    - Utilize o nome detectado do projeto para nomear as pastas. Se não encontrar o nome, prefixe com `project-`.
    - Consulte `references/output-contract.md` para o formato esperado.
 
-4. **Regeneração (Regenerate Mode):**
+4. **Análise de Especialidades Extras (Sugestões):**
+   - Além das 4 skills padrão, analise se o projeto exige outras disciplinas especializadas (ex: `devops`, `security-auditor`, `dba`, `mobile`).
+   - Não gere essas skills extras automaticamente. Apenas registre suas recomendações na array `suggested_skills` no `.spec-skill-manifest.json` com um nome sugerido para a skill e o motivo.
+   - Exiba essas sugestões de forma destacada no relatório final, recomendando ao usuário o comando `/generate-skill-suggest` caso queira criá-las.
+
+5. **Regeneração (Regenerate Mode):**
    - Siga as regras em `references/regeneration-rules.md`.
    - Substitua APENAS o conteúdo dos blocos marcados com `SPEC-GENERATED`.
    - PRESERVE integralmente os blocos marcados com `SPEC-CUSTOM`.
    - Se os marcadores não existirem, faça backup antes de atualizar.
    - Atualize apenas as mudanças reais em vez de reescrever todo o arquivo.
 
-5. **Gerenciar Conflitos:**
+6. **Gerenciar Conflitos:**
    - Se houver disparidade entre fontes (ex: Documentação diz X, código usa Y) não adivinhe nem altere arquivos-fonte silenciosamente.
    - Crie/Registre em `SPEC_CONFLICTS.md` no diretório do projeto, informando o conflito, e exiba no final.
 
-6. **Atualizar Manifesto:**
+7. **Atualizar Manifesto:**
    - Mantenha `.agents/skills/.spec-skill-manifest.json` seguindo o schema em `references/manifest-schema.json`.
    - Atualize fontes usadas, ignoradas, ausentes, stack, e o que mudou.
 
-7. **Validar Arquivos Gerados:**
+8. **Validar Arquivos Gerados:**
    - Execute o script `scripts/validate-generated-skills.py` e verifique a integridade (frontmatter YAML, blocos preservados, consistência).
    - Não finalize sem passar por todas as validações com sucesso.
 
-8. **Relatório Final:**
+9. **Relatório Final:**
    - Exiba as tecnologias detectadas, arquivos alterados/preservados, conflitos e status do git.
