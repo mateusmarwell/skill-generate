@@ -13,19 +13,18 @@ Transformar a especificação viva do projeto (normalmente localizada em `.spec/
 
 ## Estrutura do Plugin
 
-- `skills/spec-skill-generator/SKILL.md`: A skill principal que aciona a geração.
-- `skills/spec-skill-generator/references/`: Regras de preservação (`regeneration-rules.md`), contrato de saída (`output-contract.md`) e schema de manifesto (`manifest-schema.json`).
-- `skills/spec-skill-generator/scripts/validate-generated-skills.py`: Script Python usado para garantir a integridade das skills geradas.
-- `commands/`: Pasta contendo os Slash Commands nativos da interface do Antigravity (`generate-skills`, `generate-skill-suggest`, `check-skills`, `force-generate-skills`).
+- `skills/generate-skills/SKILL.md`: A skill principal que aciona a geração.
+- `skills/generate-skills/references/`: Regras de preservação (`regeneration-rules.md`), contrato de saída (`output-contract.md`) e schema de manifesto (`manifest-schema.json`).
+- `skills/generate-skills/scripts/validate-generated-skills.py`: Script Python usado para garantir a integridade das skills geradas.
 
-## Como Usar (Comandos do Workflow)
+## Como Usar (Skills)
 
-No chat do Antigravity, basta digitar `/` para ver os comandos nativos no autocompletar:
+No chat do Antigravity, basta digitar `/` para ver as skills nativas no autocompletar:
 
-- `/spec-skill-generator:generate-skills` - Identifica automaticamente se deve gerar (novo projeto) ou regenerar (projeto existente).
-- `/spec-skill-generator:check-skills` - Realiza um "dry-run" (teste) sem modificar arquivos.
-- `/spec-skill-generator:force-generate-skills` - Força a recriação ignorando o hash no manifesto.
-- `/spec-skill-generator:generate-skill-suggest [nome-da-skill]` - Cria skills extras especializadas sugeridas pela IA com base na infraestrutura do projeto.
+- `/generate-skills` - Identifica automaticamente se deve gerar (novo projeto) ou regenerar (projeto existente).
+- `/check-skills` - Realiza um "dry-run" (teste) sem modificar arquivos.
+- `/force-generate-skills` - Força a recriação ignorando o hash no manifesto.
+- `/generate-skill-suggest` - Cria skills extras especializadas sugeridas pela IA com base na infraestrutura do projeto.
 
 ## Customização e Segurança
 

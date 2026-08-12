@@ -13,19 +13,18 @@ Transform the living specification of the project (usually located in `.spec/ini
 
 ## Plugin Structure
 
-- `.agents/skills/spec-skill-generator/SKILL.md`: The main skill that triggers the generation.
-- `.agents/skills/spec-skill-generator/references/`: Rules for preservation (`regeneration-rules.md`), output contract (`output-contract.md`), and manifest schema (`manifest-schema.json`).
-- `.agents/skills/spec-skill-generator/scripts/validate-generated-skills.py`: Python script used to ensure the integrity of the generated skills.
-- `.agents/commands/`: Folder containing native Antigravity UI slash commands (`generate-skills`, `generate-skill-suggest`, `check-skills`, `force-generate-skills`).
+- `skills/generate-skills/SKILL.md`: The main skill that triggers the generation.
+- `skills/generate-skills/references/`: Rules for preservation (`regeneration-rules.md`), output contract (`output-contract.md`), and manifest schema (`manifest-schema.json`).
+- `skills/generate-skills/scripts/validate-generated-skills.py`: Python script used to ensure the integrity of the generated skills.
 
-## How to Use (Workflow Commands)
+## How to Use (Skills)
 
-In the Antigravity chat, simply type `/` to see the native commands autocompleted:
+In the Antigravity chat, simply type `/` to see the native skills autocompleted:
 
-- `/spec-skill-generator:generate-skills` - Automatically identifies whether to generate (new project) or regenerate (existing project).
-- `/spec-skill-generator:check-skills` - Performs a dry-run without modifying any files.
-- `/spec-skill-generator:force-generate-skills` - Forces recreation, ignoring the hash in the manifest.
-- `/spec-skill-generator:generate-skill-suggest [skill-name]` - Generates additional specialized skills suggested by the AI based on the project's infrastructure.
+- `/generate-skills` - Automatically identifies whether to generate (new project) or regenerate (existing project).
+- `/check-skills` - Performs a dry-run without modifying any files.
+- `/force-generate-skills` - Forces recreation, ignoring the hash in the manifest.
+- `/generate-skill-suggest` - Generates additional specialized skills suggested by the AI based on the project's infrastructure.
 
 ## Customization and Safety
 

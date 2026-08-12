@@ -1,9 +1,9 @@
 ---
-name: spec-skill-generator
+name: generate-skills
 description: Reads the project's living specification and dynamically discovers the stack, generating or updating the architect, backend, frontend, and tester skills. Use when requirements, architecture, tech stack, business rules, acceptance criteria, or project setup change.
 ---
 
-# spec-skill-generator
+# generate-skills
 
 This skill reads the living documentation and the project's source code to dynamically discover the technology stack, business rules, and architecture, generating four specialized skills (architect, backend, frontend, tester) to work on the project.
 
