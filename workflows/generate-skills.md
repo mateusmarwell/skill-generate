@@ -1,27 +1,27 @@
 # Generate Skills Workflow
 
-Este arquivo dita as regras e comandos para o bot executar o plugin `spec-skill-generator`.
+This file dictates the rules and commands for the bot to execute the `spec-skill-generator` plugin.
 
-## Comandos Disponíveis
+## Available Commands
 
 - `/generate-skills`
-  - **Comportamento Padrão**: Se o manifesto `.agents/skills/.spec-skill-manifest.json` não existir, executa o modo `generate`. Se o manifesto existir, executa o modo `regenerate`.
+  - **Default Behavior**: If the `.agents/skills/.spec-skill-manifest.json` manifest does not exist, it runs the `generate` mode. If the manifest exists, it runs the `regenerate` mode.
 - `/generate-skills generate`
-  - Cria as 4 skills (`architect`, `backend`, `frontend`, `tester`) pela primeira vez, lendo a documentação e detectando a stack.
+  - Creates the 4 skills (`architect`, `backend`, `frontend`, `tester`) for the first time, reading the documentation and detecting the stack.
 - `/generate-skills regenerate`
-  - Lê a documentação atualizada e código fonte e atualiza apenas os blocos `SPEC-GENERATED` dentro das 4 skills, preservando qualquer conteúdo em `SPEC-CUSTOM`.
+  - Reads the updated documentation and source code, updating only the `SPEC-GENERATED` blocks within the 4 skills, preserving any content in `SPEC-CUSTOM`.
 - `/generate-skills check`
-  - Apenas analisa a stack e as mudanças entre fontes e manifesto, informando (dry-run) quais alterações aconteceriam sem modificar nenhum arquivo.
+  - Only analyzes the stack and the changes between sources and the manifest, reporting (dry-run) what changes would happen without modifying any files.
 - `/generate-skills force`
-  - Força a regeneração de todas as skills, ignorando o estado atual do hash no manifesto.
-- `/generate-skill-suggest [nome-da-skill]`
-  - Cria as skills sugeridas pelo gerador (registradas em `suggested_skills` no manifesto).
-  - Se rodar **vazio**, cria todas as skills sugeridas.
-  - Se passar um **nome**, cria apenas a skill solicitada, desde que ela faça sentido para o projeto.
+  - Forces the regeneration of all skills, ignoring the current hash state in the manifest.
+- `/generate-skill-suggest [skill-name]`
+  - Creates the skills suggested by the generator (logged in `suggested_skills` inside the manifest).
+  - If executed **without arguments**, creates all suggested skills.
+  - If a **name** is provided, creates only the requested skill, as long as it makes sense for the project.
 
-## Ações Exigidas ao Executar Comandos
-O agente deve:
-1. Invocar internamente a skill `spec-skill-generator`.
-2. Seguir as regras de preservação de blocos descritas em `regeneration-rules.md`.
-3. Informar ao usuário os arquivos criados/modificados/preservados e qualquer conflito encontrado.
-4. Passar pela validação obrigatória usando `validate-generated-skills.py`.
+## Required Actions when Executing Commands
+The agent must:
+1. Internally invoke the `spec-skill-generator` skill.
+2. Follow the block preservation rules described in `regeneration-rules.md`.
+3. Inform the user of the created/modified/preserved files and any conflicts found.
+4. Pass the mandatory validation using `validate-generated-skills.py`.

@@ -1,48 +1,48 @@
-# Contrato de Saída das Skills Geradas
+# Output Contract for Generated Skills
 
-As quatro skills geradas (`architect`, `backend`, `frontend`, `tester`) devem obedecer rigorosamente a esta estrutura de blocos e convenções de preenchimento.
+The four generated skills (`architect`, `backend`, `frontend`, `tester`) must strictly adhere to this block structure and filling conventions.
 
-## Estrutura Obrigatória de SKILL.md
+## Mandatory Structure for SKILL.md
 
 ```markdown
 ---
-name: [Nome da Skill, ex: myproject-backend]
-description: [Descrição focada nas responsabilidades da skill detectada]
+name: [Skill Name, e.g.: myproject-backend]
+description: [Description focused on the responsibilities of the detected skill]
 ---
 
-# Objetivo
-[Descrição curta da skill no contexto do projeto]
+# Objective
+[Short description of the skill within the context of the project]
 
-## Tecnologias e Stack (Evidence-based)
+## Technologies and Stack (Evidence-based)
 <!-- BEGIN SPEC-GENERATED: detected-stack -->
-- Linguagem: [Detectada]
-- Framework: [Detectado]
+- Language: [Detected]
+- Framework: [Detected]
 <!-- END SPEC-GENERATED: detected-stack -->
 
-## Regras de Negócio
+## Business Rules
 <!-- BEGIN SPEC-GENERATED: business-rules -->
-- Regra 1...
+- Rule 1...
 <!-- END SPEC-GENERATED: business-rules -->
 
-## Comandos Reais (Detectados)
+## Real Commands (Detected)
 <!-- BEGIN SPEC-GENERATED: commands -->
-- Testes: `[comando detectado]`
+- Tests: `[detected command]`
 <!-- END SPEC-GENERATED: commands -->
 
-## Regras Customizadas Manuais (Não apague)
+## Custom Manual Rules (Do not delete)
 <!-- BEGIN SPEC-CUSTOM: project-rules -->
-[Espaço reservado para o desenvolvedor colocar regras manuais persistentes]
+[Placeholder for the developer to write persistent manual rules]
 <!-- END SPEC-CUSTOM: project-rules -->
 
-## Decisões Técnicas de Engenharia
+## Engineering Technical Decisions
 <!-- BEGIN SPEC-CUSTOM: engineering-decisions -->
-[Espaço para registrar logs de decisões feitas que não devem ser perdidas na regeneração]
+[Placeholder to log technical decisions that must not be lost upon regeneration]
 <!-- END SPEC-CUSTOM: engineering-decisions -->
 ```
 
-## Regras por Skill
+## Rules per Skill
 
-1. **Architect:** Focar em separar módulos, dependências permitidas, arquitetura documentada e conflitos potenciais de integração.
-2. **Backend:** Focar em controllers, validações, persistência, banco de dados (se detectado) e integrações do lado do servidor.
-3. **Frontend:** Focar em frameworks (se detectado), componentes, chamadas e contratos de rotas, estados e UI/UX/Acessibilidade.
-4. **Tester:** Transformar cenários da especificação em uma matriz clara de pré-condições, entradas e saídas e relacionar com o framework de testes (se detectado). Se não detectar ferramentas, recomendar criação manual de scripts.
+1. **Architect:** Focus on module separation, allowed dependencies, documented architecture, and potential integration conflicts.
+2. **Backend:** Focus on controllers, validations, persistence, database (if detected), and server-side integrations.
+3. **Frontend:** Focus on frameworks (if detected), components, route consumption and contracts, states, and UI/UX/Accessibility.
+4. **Tester:** Transform specification scenarios into a clear matrix of pre-conditions, inputs, and outputs, linking them to the testing framework (if detected). If no testing tools are detected, recommend the manual creation of scripts.

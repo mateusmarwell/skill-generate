@@ -1,32 +1,33 @@
 # Spec Skill Generator Plugin
 
-Este repositório contém o plugin `spec-skill-generator` para o Google Antigravity. Este plugin foi desenvolvido para ser estritamente **agnóstico de stack e de linguagem**.
+This repository contains the `spec-skill-generator` plugin for Google Antigravity. This plugin was developed to be strictly **stack-agnostic and language-agnostic**.
 
-## Objetivo
+## Objective
 
-Transformar a especificação viva do projeto (normalmente localizada em `.spec/init/`) em quatro skills ativas e atualizáveis que orientarão os agentes da IA:
+Transform the living specification of the project (usually located in `.spec/init/`) into active and updatable skills that guide the AI agents:
 
-1. **Architect**: Decisões técnicas e organização de módulos.
-2. **Backend**: Persistência, validações e controllers (se aplicável).
-3. **Frontend**: Componentes, UI/UX e consumo de rotas (se aplicável).
-4. **Tester**: Transformação de critérios de aceite e histórias em cenários de testes.
+1. **Architect**: Technical decisions and module organization.
+2. **Backend**: Persistence, validations, and controllers (if applicable).
+3. **Frontend**: Components, UI/UX, and route consumption (if applicable).
+4. **Tester**: Transforming acceptance criteria and stories into test scenarios.
 
-## Estrutura do Plugin
+## Plugin Structure
 
-- `.agents/skills/spec-skill-generator/SKILL.md`: A skill principal que aciona a geração.
-- `.agents/skills/spec-skill-generator/references/`: Regras de preservação (`regeneration-rules.md`), contrato de saída (`output-contract.md`) e schema de manifesto (`manifest-schema.json`).
-- `.agents/skills/spec-skill-generator/scripts/validate-generated-skills.py`: Script Python usado para garantir a integridade das skills geradas.
-- `.agents/workflows/generate-skills.md`: Workflow com os comandos executáveis via chat para acionar o plugin.
+- `.agents/skills/spec-skill-generator/SKILL.md`: The main skill that triggers the generation.
+- `.agents/skills/spec-skill-generator/references/`: Rules for preservation (`regeneration-rules.md`), output contract (`output-contract.md`), and manifest schema (`manifest-schema.json`).
+- `.agents/skills/spec-skill-generator/scripts/validate-generated-skills.py`: Python script used to ensure the integrity of the generated skills.
+- `.agents/workflows/generate-skills.md`: Workflow containing chat commands to trigger the plugin.
 
-## Como Usar (Comandos do Workflow)
+## How to Use (Workflow Commands)
 
-No chat do Antigravity, você pode invocar:
+In the Antigravity chat, you can invoke:
 
-- `/generate-skills` - Identifica automaticamente se deve gerar (novo projeto) ou regenerar (projeto existente).
-- `/generate-skills check` - Realiza um "dry-run" sem modificar arquivos.
-- `/generate-skills force` - Força a recriação ignorando o hash no manifesto.
+- `/generate-skills` - Automatically identifies whether to generate (new project) or regenerate (existing project).
+- `/generate-skills check` - Performs a dry-run without modifying any files.
+- `/generate-skills force` - Forces recreation, ignoring the hash in the manifest.
+- `/generate-skill-suggest [skill-name]` - Generates additional specialized skills suggested by the AI based on the project's infrastructure.
 
-## Customização e Segurança
+## Customization and Safety
 
-Todas as skills geradas utilizam blocos marcados com `<!-- BEGIN SPEC-GENERATED: ... -->` e `<!-- BEGIN SPEC-CUSTOM: ... -->`.
-Durante uma regeneração, **apenas o conteúdo gerado** é substituído, garantindo que as regras e notas de engenharia manuais do desenvolvedor nunca sejam perdidas.
+All generated skills use blocks marked with `<!-- BEGIN SPEC-GENERATED: ... -->` and `<!-- BEGIN SPEC-CUSTOM: ... -->`.
+During a regeneration, **only the generated content** is replaced, ensuring that the developer's manual rules and engineering notes are never lost.

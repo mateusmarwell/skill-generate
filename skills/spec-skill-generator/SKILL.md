@@ -1,59 +1,61 @@
 ---
 name: spec-skill-generator
-description: Lê a especificação e os arquivos relevantes do projeto, detecta a stack atual e gera ou atualiza skills de arquiteto, backend, frontend e tester. Use quando requisitos, arquitetura, tecnologias, regras de negócio, critérios de aceite ou configuração do projeto forem alterados.
+description: Reads the project's living specification and dynamically discovers the stack, generating or updating the architect, backend, frontend, and tester skills. Use when requirements, architecture, tech stack, business rules, acceptance criteria, or project setup change.
 ---
 
 # spec-skill-generator
 
-Esta skill lê a documentação viva e o código do projeto para descobrir dinamicamente a stack de tecnologias, regras de negócio e arquitetura, gerando quatro skills especializadas (architect, backend, frontend, tester) para atuar no projeto.
+This skill reads the living documentation and the project's source code to dynamically discover the technology stack, business rules, and architecture, generating four specialized skills (architect, backend, frontend, tester) to work on the project.
 
-## Objetivo
-Transformar a especificação do projeto em quatro skills vivas, atualizáveis e agnósticas a tecnologias fixas.
+## Objective
+Transform the project specification into four living, updatable skills that are stack-agnostic until evidence is found.
 
-## Fluxo de Execução
+## Execution Flow
 
-1. **Ler Especificação:**
-   - Procure arquivos relevantes, prioritariamente na pasta `.spec/init/`, como descrições de projeto, requisitos, histórias de usuário, modelo de dados e decisões técnicas.
-   - A especificação não tem um formato estrito, analise os arquivos que existirem.
+1. **Read Specification:**
+   - Look for relevant files, primarily in the `.spec/init/` folder, such as project descriptions, requirements, user stories, data models, and technical decisions.
+   - The specification does not have a strict format; analyze the files that exist.
 
-2. **Descoberta Dinâmica de Stack (Evidence-based):**
-   - Inspecione arquivos no repositório (ex: `package.json`, `pom.xml`, `go.mod`, `Dockerfile`, `.yml`, etc.) e configurações (testes, builds, db) para inferir tecnologias reais.
-   - Diferencie o "estado desejado" (especificação) do "estado atual" (código).
-   - **IMPORTANTE:** Não assuma nenhuma linguagem (ex: JS, TS, Python, Go) ou framework antecipadamente. Apenas use o que encontrar com evidências concretas.
+2. **Dynamic Stack Discovery (Evidence-based):**
+   - Inspect repository files (e.g., `package.json`, `pom.xml`, `go.mod`, `Dockerfile`, `.yml`, etc.) and configurations (tests, builds, DB) to infer real technologies.
+   - Differentiate between the "desired state" (specification) and the "current state" (code).
+   - **IMPORTANT:** Do not assume any language (e.g., JS, TS, Python, Go) or framework in advance. Use only what you find with concrete evidence.
 
-3. **Gerar as Quatro Skills:**
-   - Com base nos dados encontrados, gere/atualize 4 arquivos de skill em `.agents/skills/`:
-     - `<project>-architect/SKILL.md`: Focado na arquitetura geral.
-     - `<project>-backend/SKILL.md`: Focado em desenvolvimento backend e banco de dados.
-     - `<project>-frontend/SKILL.md`: Focado no desenvolvimento da interface.
-     - `<project>-tester/SKILL.md`: Focado em cenários de teste, unitários e E2E.
-   - Utilize o nome detectado do projeto para nomear as pastas. Se não encontrar o nome, prefixe com `project-`.
-   - Consulte `references/output-contract.md` para o formato esperado.
+3. **Generate the Four Skills:**
+   - Based on the gathered data, generate/update 4 skill files in `.agents/skills/`:
+     - `<project>-architect/SKILL.md`: Focused on overall architecture.
+     - `<project>-backend/SKILL.md`: Focused on backend development and database.
+     - `<project>-frontend/SKILL.md`: Focused on UI development.
+     - `<project>-tester/SKILL.md`: Focused on test scenarios, unit tests, and E2E.
+   - Use the detected project name to name the folders. If not found, prefix with `project-`.
+   - Refer to `references/output-contract.md` for the expected format.
+   - **CRITICAL RULE:** All generated `SKILL.md` files must be written strictly in **English** (including headings, e.g., `## Business Rules`).
 
-4. **Análise de Especialidades Extras (Sugestões):**
-   - Além das 4 skills padrão, analise se o projeto exige outras disciplinas especializadas (ex: `devops`, `security-auditor`, `dba`, `mobile`).
-   - Não gere essas skills extras automaticamente. Apenas registre suas recomendações na array `suggested_skills` no `.spec-skill-manifest.json` com um nome sugerido para a skill e o motivo.
-   - Exiba essas sugestões de forma destacada no relatório final, recomendando ao usuário o comando `/generate-skill-suggest` caso queira criá-las.
+4. **Extra Specialties Analysis (Suggestions):**
+   - In addition to the 4 standard skills, analyze if the project requires other specialized disciplines (e.g., `devops`, `security-auditor`, `dba`, `mobile`).
+   - Do not generate these extra skills automatically. Just record your recommendations in the `suggested_skills` array within `.spec-skill-manifest.json`, providing a suggested name and reason.
+   - Display these suggestions prominently in the final report, recommending the user run the `/generate-skill-suggest` command if they wish to create them.
 
-5. **Regeneração (Regenerate Mode):**
-   - Siga as regras em `references/regeneration-rules.md`.
-   - Refaça a Análise de Especialidades Extras (passo 4), pois a stack do projeto pode ter evoluído (ex: um banco de dados novo foi adicionado).
-   - Substitua APENAS o conteúdo dos blocos marcados com `SPEC-GENERATED`.
-   - PRESERVE integralmente os blocos marcados com `SPEC-CUSTOM`.
-   - Se os marcadores não existirem, faça backup antes de atualizar.
-   - Atualize apenas as mudanças reais em vez de reescrever todo o arquivo.
+5. **Regeneration (Regenerate Mode):**
+   - Follow the rules in `references/regeneration-rules.md`.
+   - Re-run the Extra Specialties Analysis (step 4), as the project stack may have evolved (e.g., a new database was added).
+   - Replace ONLY the content of blocks marked with `SPEC-GENERATED`.
+   - PRESERVE entirely the blocks marked with `SPEC-CUSTOM`.
+   - If the markers do not exist, create a backup before updating.
+   - Update only the real changes instead of rewriting the entire file.
 
-6. **Gerenciar Conflitos:**
-   - Se houver disparidade entre fontes (ex: Documentação diz X, código usa Y) não adivinhe nem altere arquivos-fonte silenciosamente.
-   - Crie/Registre em `SPEC_CONFLICTS.md` no diretório do projeto, informando o conflito, e exiba no final.
+6. **Manage Conflicts:**
+   - If there is a disparity between sources (e.g., Docs say X, code uses Y), do not guess or silently modify source files.
+   - Create/Record the conflict in `SPEC_CONFLICTS.md` at the project root, explain the issue, and display it at the end.
 
-7. **Atualizar Manifesto:**
-   - Mantenha `.agents/skills/.spec-skill-manifest.json` seguindo o schema em `references/manifest-schema.json`.
-   - Atualize fontes usadas, ignoradas, ausentes, stack, e o que mudou.
+7. **Update Manifest:**
+   - Maintain `.agents/skills/.spec-skill-manifest.json` following the schema in `references/manifest-schema.json`.
+   - Update used sources, ignored files, missing files, the stack, and what changed.
 
-8. **Validar Arquivos Gerados:**
-   - Execute o script `scripts/validate-generated-skills.py` e verifique a integridade (frontmatter YAML, blocos preservados, consistência).
-   - Não finalize sem passar por todas as validações com sucesso.
+8. **Validate Generated Files:**
+   - Execute the script `scripts/validate-generated-skills.py` and verify integrity (YAML frontmatter, preserved blocks, consistency).
+   - Do not finish without passing all validations successfully.
 
-9. **Relatório Final:**
-   - Exiba as tecnologias detectadas, arquivos alterados/preservados, conflitos e status do git.
+9. **Final Report:**
+   - Display the detected technologies, altered/preserved files, conflicts, and git status.
+   - **CHAT LANGUAGE RULE:** Explain your final response and chat messages in the language the user is currently writing in (e.g., Portuguese), even though you just generated all files in English.
