@@ -37,6 +37,7 @@ Transformar a especificação do projeto em quatro skills vivas, atualizáveis e
 
 5. **Regeneração (Regenerate Mode):**
    - Siga as regras em `references/regeneration-rules.md`.
+   - Refaça a Análise de Especialidades Extras (passo 4), pois a stack do projeto pode ter evoluído (ex: um banco de dados novo foi adicionado).
    - Substitua APENAS o conteúdo dos blocos marcados com `SPEC-GENERATED`.
    - PRESERVE integralmente os blocos marcados com `SPEC-CUSTOM`.
    - Se os marcadores não existirem, faça backup antes de atualizar.
