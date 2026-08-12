@@ -57,6 +57,8 @@ Transform the project specification into four living, updatable skills that are 
    - Do not finish without passing all validations successfully.
 
 9. **Final Report:**
-   - Display the detected technologies, altered/preserved files, conflicts, and git status.
-   - **CRITICAL:** If any `suggested_skills` were added to the manifest, you MUST explicitly list them in your final chat response to the user, explaining why they were suggested and instructing the user to run the `/generate-skill-suggest` skill to create them.
+   - **CRITICAL:** Do NOT leave the `.spec-skill-manifest.json` data hidden in the background! You MUST output a detailed Markdown summary of the manifest contents in your final chat response.
+   - Include the **Detected Stack**, the **Sources** used, and a list of all **Changes** (files added/altered/preserved) and **Conflicts** (if any).
+   - If any `suggested_skills` were added to the manifest, you MUST explicitly list them, explaining why they were suggested, and instruct the user to run the `/generate-skill-suggest` skill to create them.
+   - Finally, inform the user about the git commit status.
    - **CHAT LANGUAGE RULE:** Explain your final response and chat messages in the language the user is currently writing in (e.g., Portuguese), even though you just generated all files in English.
