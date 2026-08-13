@@ -22,12 +22,13 @@ Transform the project specification into four living, updatable skills that are 
    - If in Code-Driven Mode, rely entirely on the discovered stack and codebase structure.
    - **IMPORTANT:** Do not assume any language (e.g., JS, TS, Python, Go) or framework in advance. Use only what you find with concrete evidence.
 
-3. **Generate the Four Skills:**
-   - Based on the gathered data, generate/update 4 skill files in `.agents/skills/`:
-     - `<project>-architect/SKILL.md`: Focused on overall architecture.
-     - `<project>-backend/SKILL.md`: Focused on backend development and database.
-     - `<project>-frontend/SKILL.md`: Focused on UI development.
-     - `<project>-tester/SKILL.md`: Focused on test scenarios, unit tests, and E2E.
+3. **Generate Core Skills Conditionally:**
+   - Based on the gathered data, conditionally generate/update up to 4 skill files in `.agents/skills/`:
+     - `<project>-architect/SKILL.md`: (Always generate) Focused on overall architecture.
+     - `<project>-tester/SKILL.md`: (Always generate) Focused on test scenarios, unit tests, and E2E.
+     - `<project>-backend/SKILL.md`: (Generate ONLY if backend evidence is found, e.g., APIs, databases, backend languages/frameworks).
+     - `<project>-frontend/SKILL.md`: (Generate ONLY if frontend evidence is found, e.g., UI code, React, Vue, HTML/CSS).
+   - If a skill is not applicable (e.g., a pure API project with no UI), do NOT create its folder or skill file.
    - Use the detected project name to name the folders. If not found, prefix with `project-`.
    - Refer to `references/output-contract.md` for the expected format.
    - **CRITICAL RULE:** All generated `SKILL.md` files must be written strictly in **English** (including headings, e.g., `## Business Rules`).
