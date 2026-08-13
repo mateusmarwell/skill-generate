@@ -61,5 +61,5 @@ Transform the project specification into four living, updatable skills that are 
    - **CRITICAL:** Do NOT leave the `.spec-skill-manifest.json` data hidden in the background! You MUST output a detailed Markdown summary of the manifest contents in your final chat response.
    - Include the **Detected Stack**, the **Sources** used, and a list of all **Changes** (files added/altered/preserved) and **Conflicts** (if any).
    - If any `suggested_skills` were added to the manifest, you MUST explicitly list them, explaining why they were suggested, and instruct the user to run the `/generate-skill-suggest` skill to create them.
-   - Finally, inform the user about the git commit status.
+   - **NO AUTOMATIC COMMITS:** Do NOT automatically run `git commit` or `git push`. Leave the files in the working directory. In your final report, ask the user if they want you to commit the changes, so they have a chance to review the generated files first.
    - **CHAT LANGUAGE RULE:** Explain your final response and chat messages in the language the user is currently writing in (e.g., Portuguese), even though you just generated all files in English.
