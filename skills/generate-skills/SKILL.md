@@ -12,13 +12,14 @@ Transform the project specification into four living, updatable skills that are 
 
 ## Execution Flow
 
-1. **Read Specification:**
-   - Look for relevant files, primarily in the `.spec/init/` folder, such as project descriptions, requirements, user stories, data models, and technical decisions.
-   - The specification does not have a strict format; analyze the files that exist.
+1. **Read Specification or Fallback (Legacy Mode):**
+   - **Spec-Driven Mode:** First, look for formal specification files in the `.spec/init/` folder (such as project descriptions, user stories, and data models).
+   - **Code-Driven Mode (Fallback):** If the `.spec/init/` folder does not exist or is empty, DO NOT stop. Assume the project is a legacy or undocumented codebase. Perform reverse engineering by deeply analyzing the root `README.md`, package configs, directory structures (e.g., `src/domain`, `src/controllers`), and key source files to infer the project's purpose, architecture, and implicit business rules.
 
 2. **Dynamic Stack Discovery (Evidence-based):**
    - Inspect repository files (e.g., `package.json`, `pom.xml`, `go.mod`, `Dockerfile`, `.yml`, etc.) and configurations (tests, builds, DB) to infer real technologies.
-   - Differentiate between the "desired state" (specification) and the "current state" (code).
+   - If specifications exist, differentiate between the "desired state" (specs) and the "current state" (code).
+   - If in Code-Driven Mode, rely entirely on the discovered stack and codebase structure.
    - **IMPORTANT:** Do not assume any language (e.g., JS, TS, Python, Go) or framework in advance. Use only what you find with concrete evidence.
 
 3. **Generate the Four Skills:**

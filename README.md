@@ -4,12 +4,16 @@ This repository contains the `spec-skill-generator` plugin for Google Antigravit
 
 ## Objective
 
-Transform the living specification of the project (usually located in `.spec/init/`) into active and updatable skills that guide the AI agents:
+Transform the project into active and updatable skills that guide the AI agents:
 
 1. **Architect**: Technical decisions and module organization.
 2. **Backend**: Persistence, validations, and controllers (if applicable).
 3. **Frontend**: Components, UI/UX, and route consumption (if applicable).
 4. **Tester**: Transforming acceptance criteria and stories into test scenarios.
+
+### Modes of Operation
+- **Spec-Driven**: If the project has a `.spec/init/` directory (living specification), the plugin will read those formal contracts to generate the skills.
+- **Code-Driven (Legacy/Fallback)**: If no specification exists, the plugin will seamlessly fallback to reverse-engineering the project by deeply analyzing the source code, package configurations, and directory structure to infer the architecture and business rules.
 
 ## Plugin Structure
 

@@ -4,12 +4,16 @@ Este repositório contém o plugin `spec-skill-generator` para o Google Antigrav
 
 ## Objetivo
 
-Transformar a especificação viva do projeto (normalmente localizada em `.spec/init/`) em skills ativas e atualizáveis que orientarão os agentes da IA:
+Transformar o projeto em skills ativas e atualizáveis que orientam os agentes de IA:
 
-1. **Architect**: Decisões técnicas e organização de módulos.
+1. **Arquiteto**: Decisões técnicas e organização de módulos.
 2. **Backend**: Persistência, validações e controllers (se aplicável).
 3. **Frontend**: Componentes, UI/UX e consumo de rotas (se aplicável).
-4. **Tester**: Transformação de critérios de aceite e histórias em cenários de testes.
+4. **Tester**: Transformar critérios de aceite e histórias em cenários de teste.
+
+### Modos de Operação
+- **Spec-Driven**: Se o projeto possuir o diretório `.spec/init/` (especificação viva), o plugin consumirá esses contratos formais para gerar as skills.
+- **Code-Driven (Legacy/Fallback)**: Se não houver especificação, o plugin entrará automaticamente no modo de engenharia reversa, analisando profundamente o código fonte, configurações de pacotes e estrutura de pastas para inferir a arquitetura e as regras de negócio.s.
 
 ## Estrutura do Plugin
 
