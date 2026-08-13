@@ -1,6 +1,6 @@
 # Output Contract for Generated Skills
 
-The four generated skills (`architect`, `backend`, `frontend`, `tester`) must strictly adhere to this block structure and filling conventions.
+The generated core skills (up to four, depending on the stack: `architect`, `backend`, `frontend`, `tester`) must strictly adhere to this block structure and filling conventions.
 
 ## Mandatory Structure for SKILL.md
 
