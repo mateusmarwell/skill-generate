@@ -1,6 +1,6 @@
 # Output Contract for Generated Skills
 
-The generated core skills (up to four, depending on the stack: `architect`, `backend`, `frontend`, `tester`) must strictly adhere to this block structure and filling conventions.
+The generated core skills (up to five: `architect`, `tester`, and `security` always generated; `backend` and `frontend` conditionally generated based on stack evidence) must strictly adhere to this block structure and filling conventions.
 
 ## Mandatory Structure for SKILL.md
 
@@ -43,6 +43,28 @@ description: [Description focused on the responsibilities of the detected skill]
 ## Rules per Skill
 
 1. **Architect:** Focus on module separation, allowed dependencies, documented architecture, and potential integration conflicts.
-2. **Backend:** Focus on controllers, validations, persistence, database (if detected), and server-side integrations.
-3. **Frontend:** Focus on frameworks (if detected), components, route consumption and contracts, states, and UI/UX/Accessibility.
-4. **Tester:** Transform specification scenarios into a clear matrix of pre-conditions, inputs, and outputs, linking them to the testing framework (if detected). If no testing tools are detected, recommend the manual creation of scripts.
+   - **Legacy Protection Guardrails (Mandatory):**
+     - **Pattern Continuity:** Strictly adhere to the project's existing folder layout, naming conventions, and structural architecture without imposing unrequested paradigms (e.g., Clean Architecture, DDD, microservices).
+     - **No Global Reorganization:** Do NOT move, rename, or reorganize existing core modules or directories without explicit developer instructions.
+     - **Dependency Restraint:** Avoid introducing heavy structural architectural frameworks or altering global Dependency Injection/IoC containers.
+2. **Tester:** Transform specification scenarios into a clear matrix of pre-conditions, inputs, and outputs, linking them to the testing framework (if detected). If no testing tools are detected, recommend the manual creation of scripts.
+   - **Legacy Protection Guardrails (Mandatory):**
+     - **Test Runner Parity:** Author test cases using strictly the detected test runner, assertion libraries, and execution conventions.
+     - **CI/CD Compatibility:** Ensure new tests execute via native project test commands (`npm test`, `pytest`, `mvn test`) without requiring modifications to existing CI/CD or build pipelines.
+     - **Fixture & Helper Reuse:** Reutilize existing test utilities, fixtures, seeders, and mocks rather than creating conflicting test harnesses.
+3. **Security:** Focus on application security posture, OWASP Top 10 prevention, secrets management (`.env`, no hardcoded tokens/credentials), input sanitization, authentication/authorization validation, and detected security audit commands (e.g., `npm audit`, `pip-audit`, `cargo audit`, `bandit`, `trivy`, `semgrep`).
+   - **Legacy Protection Guardrails (Mandatory):**
+     - **Scoped Enforcement:** Apply strict security validations only to newly created code or code explicitly targeted for editing.
+     - **No Mass Refactoring:** Do NOT unilaterally rewrite existing working legacy authentication, raw database queries, or legacy dependencies unless explicitly requested by the developer.
+     - **Flag & Warn:** If legacy vulnerabilities are identified in untouched code, report them in the final chat response/notes instead of modifying unrequested files.
+     - **Stack & Version Respect:** Recommend and enforce security practices compatible with the detected version of the language/framework without forcing breaking dependency upgrades.
+4. **Backend:** Focus on controllers, validations, persistence, database (if detected), and server-side integrations.
+   - **Legacy Protection Guardrails (Mandatory):**
+     - **Contract Immutability:** Never alter existing endpoint signatures, response schemas, status codes, or parameter names of working APIs.
+     - **Persistence Pattern Parity:** Respect and maintain the existing database access patterns (e.g., raw SQL with parameter binding, custom DAOs, ORMs, stored procedures) without forcing modern ORM rewrites.
+     - **Runtime Version Parity:** Restrict language features and standard library methods strictly to what is supported by the detected runtime version (e.g., Node 14/16, PHP 7.x, Python 3.8, Java 8/11).
+5. **Frontend:** Focus on frameworks (if detected), components, route consumption and contracts, states, and UI/UX/Accessibility.
+   - **Legacy Protection Guardrails (Mandatory):**
+     - **Styling Consistency:** Adhere strictly to the existing styling paradigm (e.g., Global CSS, BEM, SASS/SCSS, CSS Modules, Bootstrap) without injecting competing CSS frameworks (e.g., Tailwind).
+     - **Component Pattern Continuity:** Match the component style (class-based vs functional components, state management version) of the file or module being touched.
+     - **Global Layout Preservation:** Do NOT modify global CSS resets, shared layout wrappers, or root styling tokens that could distort existing legacy screens.

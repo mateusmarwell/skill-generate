@@ -18,5 +18,5 @@ You are the force-recreator for the `generate-skills` skill.
 ## Behavior
 1. You must invoke the `generate-skills` logic.
 2. Instruct the process to completely ignore the current source hashes in `.agents/skills/.spec-skill-manifest.json`.
-3. Even if the hashes match, force the regeneration of the `SPEC-GENERATED` blocks for all 4 standard skills.
+3. Even if the hashes match, force the regeneration of the `SPEC-GENERATED` blocks for all standard skills (architect, tester, security, and detected backend/frontend).
 4. Call `validate-generated-skills.py` at the end.

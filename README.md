@@ -8,8 +8,9 @@ Transform the project into active and updatable skills that guide the AI agents:
 
 1. **Architect**: Technical decisions and module organization. (Always generated)
 2. **Tester**: Transforming acceptance criteria and stories into test scenarios. (Always generated)
-3. **Backend**: Persistence, validations, and controllers. (Generated ONLY if backend evidence is found)
-4. **Frontend**: Components, UI/UX, and route consumption. (Generated ONLY if frontend evidence is found)
+3. **Security**: Security posture, OWASP Top 10 prevention, secrets management, input sanitization, and non-destructive legacy protection. (Always generated)
+4. **Backend**: Persistence, validations, and controllers. (Generated ONLY if backend evidence is found)
+5. **Frontend**: Components, UI/UX, and route consumption. (Generated ONLY if frontend evidence is found)
 
 ### Modes of Operation
 - **Spec-Driven**: If the project has a `.spec/init/` directory (living specification), the plugin will read those formal contracts to generate the skills.

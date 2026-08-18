@@ -8,12 +8,13 @@ Transformar o projeto em skills ativas e atualizáveis que orientam os agentes d
 
 1. **Arquiteto**: Decisões técnicas e organização de módulos. (Sempre gerado)
 2. **Tester**: Transformar critérios de aceite e histórias em cenários de teste. (Sempre gerado)
-3. **Backend**: Persistência, validações e controllers. (Gerado APENAS se evidências de backend forem encontradas)
-4. **Frontend**: Componentes, UI/UX e consumo de rotas. (Gerado APENAS se evidências de UI/Frontend forem encontradas)
+3. **Segurança**: Postura de segurança, prevenção ao OWASP Top 10, gestão de segredos, sanitização de inputs e proteção não-destrutiva ao legado. (Sempre gerado)
+4. **Backend**: Persistência, validações e controllers. (Gerado APENAS se evidências de backend forem encontradas)
+5. **Frontend**: Componentes, UI/UX e consumo de rotas. (Gerado APENAS se evidências de UI/Frontend forem encontradas)
 
 ### Modos de Operação
 - **Spec-Driven**: Se o projeto possuir o diretório `.spec/init/` (especificação viva), o plugin consumirá esses contratos formais para gerar as skills.
-- **Code-Driven (Legacy/Fallback)**: Se não houver especificação, o plugin entrará automaticamente no modo de engenharia reversa, analisando profundamente o código fonte, configurações de pacotes e estrutura de pastas para inferir a arquitetura e as regras de negócio.s.
+- **Code-Driven (Legacy/Fallback)**: Se não houver especificação, o plugin entrará automaticamente no modo de engenharia reversa, analisando profundamente o código fonte, configurações de pacotes e estrutura de pastas para inferir a arquitetura e as regras de negócio.
 
 ## Estrutura do Plugin
 

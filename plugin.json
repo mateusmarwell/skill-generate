@@ -1,7 +1,7 @@
 {
   "name": "spec-skill-generator",
   "version": "1.0.0",
-  "description": "Reads the project's living specification and dynamically creates or updates the architect, backend, frontend, and tester skills.",
+  "description": "Reads the project's living specification and dynamically creates or updates the architect, security, tester, backend, and frontend skills.",
   "author": {
     "name": "Mateus Marwell",
     "email": "mateus.marwell@outlook.com"
