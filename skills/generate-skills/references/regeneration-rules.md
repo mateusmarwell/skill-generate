@@ -1,6 +1,6 @@
 # Regeneration Rules (Regenerate Mode)
 
-When the command `/generate-skills regenerate` is executed, the main `skill-generation` skill must re-process the documentation and apply modifications strictly adhering to these rules:
+When the command `/generate-skills regenerate` is executed, the main `skill-generator` skill must re-process the documentation and apply modifications strictly adhering to these rules:
 
 ## 1. Block Handling
 - **Generated Blocks (`SPEC-GENERATED`)**: Can be completely overwritten by the newly read data from `.spec/init` or the project source.
