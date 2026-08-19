@@ -1,6 +1,6 @@
-# Spec Skill Generator Plugin
+# Skill Generation Plugin
 
-Este repositório contém o plugin `spec-skill-generator` para o Google Antigravity. Este plugin foi desenvolvido para ser estritamente **agnóstico de stack e de linguagem**.
+Este repositório contém o plugin `skill-generation` para o Google Antigravity. Este plugin foi desenvolvido para ser estritamente **agnóstico de stack e de linguagem**.
 
 ## Objetivo
 

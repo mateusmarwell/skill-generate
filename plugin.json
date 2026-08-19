@@ -1,5 +1,5 @@
 {
-  "name": "spec-skill-generator",
+  "name": "skill-generation",
   "version": "1.0.0",
   "description": "Reads the project's living specification and dynamically creates or updates the architect, security, tester, backend, and frontend skills.",
   "author": {

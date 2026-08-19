@@ -1,4 +1,4 @@
-# Rules for spec-skill-generator Repository
+# Rules for skill-generation Repository
 
 ## Documentation Synchronization
 - Whenever `README.md` (English) is updated, you **MUST** simultaneously translate the changes and update `README.pt-BR.md` (Portuguese) to keep both documents strictly synchronized.
