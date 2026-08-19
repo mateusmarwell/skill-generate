@@ -4,13 +4,13 @@ Este repositório contém o plugin `spec-skill-generator` para o Google Antigrav
 
 ## Objetivo
 
-Transformar o projeto em skills ativas e atualizáveis que orientam os agentes de IA:
+Transformar o projeto em skills ativas e atualizáveis que orientam os agentes de IA, com guardrails não-destrutivos integrados para proteger sistemas legados e em produção:
 
-1. **Arquiteto**: Decisões técnicas e organização de módulos. (Sempre gerado)
-2. **Tester**: Transformar critérios de aceite e histórias em cenários de teste. (Sempre gerado)
-3. **Segurança**: Postura de segurança, prevenção ao OWASP Top 10, gestão de segredos, sanitização de inputs e proteção não-destrutiva ao legado. (Sempre gerado)
-4. **Backend**: Persistência, validações e controllers. (Gerado APENAS se evidências de backend forem encontradas)
-5. **Frontend**: Componentes, UI/UX e consumo de rotas. (Gerado APENAS se evidências de UI/Frontend forem encontradas)
+1. **Arquiteto**: Decisões técnicas, organização de módulos, continuidade estrutural, preservação de lockfiles e portabilidade de caminhos. (Sempre gerado)
+2. **Tester**: Transformar critérios de aceite em cenários de teste com paridade do runner detectado e compatibilidade com CI/CD. (Sempre gerado)
+3. **Segurança**: Postura de segurança, prevenção ao OWASP Top 10, gestão de segredos, sanitização de inputs e proteção/redação de PII em logs. (Sempre gerado)
+4. **Backend**: Persistência, validações, controllers, imutabilidade de contratos de API, migrations não-destrutivas e queries limitadas (sem N+1). (Gerado APENAS se evidências de backend forem encontradas)
+5. **Frontend**: Componentes, UI/UX, consistência de estilos, continuidade de padrões de componentes e preservação do layout global. (Gerado APENAS se evidências de UI/Frontend forem encontradas)
 
 ### Modos de Operação
 - **Spec-Driven**: Se o projeto possuir o diretório `.spec/init/` (especificação viva), o plugin consumirá esses contratos formais para gerar as skills.

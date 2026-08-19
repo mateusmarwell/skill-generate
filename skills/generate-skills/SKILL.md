@@ -23,12 +23,12 @@ Transform the project specification into living, updatable skills that are stack
    - **IMPORTANT:** Do not assume any language (e.g., JS, TS, Python, Go) or framework in advance. Use only what you find with concrete evidence.
 
 3. **Generate Core Skills Conditionally:**
-   - Based on the gathered data, generate/update up to 5 skill files in `.agents/skills/`:
-     - `<project>-architect/SKILL.md`: (Always generate) Focused on overall architecture.
-     - `<project>-tester/SKILL.md`: (Always generate) Focused on test scenarios, unit tests, and E2E.
-     - `<project>-security/SKILL.md`: (Always generate) Focused on application security, OWASP Top 10 prevention, secrets management, input sanitization, legacy protection rules (do not refactor unrequested legacy, flag and warn), and detected security audit commands.
-     - `<project>-backend/SKILL.md`: (Generate ONLY if backend evidence is found, e.g., APIs, databases, backend languages/frameworks).
-     - `<project>-frontend/SKILL.md`: (Generate ONLY if frontend evidence is found, e.g., UI code, React, Vue, HTML/CSS).
+   - Based on the gathered data, generate/update up to 5 skill files in `.agents/skills/` adhering to the legacy-safe guardrails in `references/output-contract.md`:
+     - `<project>-architect/SKILL.md`: (Always generate) Focused on overall architecture, module boundaries, structural continuity, dependency restraint & lockfile preservation, and path portability (no machine-specific hardcoding).
+     - `<project>-tester/SKILL.md`: (Always generate) Focused on test scenarios, unit tests, E2E, and detected runner parity without breaking CI/CD pipelines.
+     - `<project>-security/SKILL.md`: (Always generate) Focused on application security, OWASP Top 10 prevention, secrets management, input sanitization, sanitized logging & PII redaction, and scoped legacy protection (no unrequested refactorings, flag and warn).
+     - `<project>-backend/SKILL.md`: (Generate ONLY if backend evidence is found) Focused on controllers, validations, persistence, API contract immutability, additive non-destructive migrations, bounded queries (no N+1), explicit error handling, and runtime version compatibility.
+     - `<project>-frontend/SKILL.md`: (Generate ONLY if frontend evidence is found) Focused on UI code, components, route consumption, styling consistency, and global layout preservation.
    - If a skill is not applicable (e.g., a pure API project with no UI), do NOT create its folder or skill file.
    - Use the detected project name to name the folders. If not found, prefix with `project-`.
    - Refer to `references/output-contract.md` for the expected format.

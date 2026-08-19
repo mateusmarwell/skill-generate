@@ -4,13 +4,13 @@ This repository contains the `spec-skill-generator` plugin for Google Antigravit
 
 ## Objective
 
-Transform the project into active and updatable skills that guide the AI agents:
+Transform the project into active and updatable skills that guide the AI agents, with built-in non-destructive guardrails to safeguard legacy and production codebases:
 
-1. **Architect**: Technical decisions and module organization. (Always generated)
-2. **Tester**: Transforming acceptance criteria and stories into test scenarios. (Always generated)
-3. **Security**: Security posture, OWASP Top 10 prevention, secrets management, input sanitization, and non-destructive legacy protection. (Always generated)
-4. **Backend**: Persistence, validations, and controllers. (Generated ONLY if backend evidence is found)
-5. **Frontend**: Components, UI/UX, and route consumption. (Generated ONLY if frontend evidence is found)
+1. **Architect**: Technical decisions, module organization, structural continuity, lockfile preservation, and path portability. (Always generated)
+2. **Tester**: Transforming acceptance criteria into test scenarios with detected runner parity and CI/CD compatibility. (Always generated)
+3. **Security**: Security posture, OWASP Top 10 prevention, secrets management, input sanitization, and sanitized logging / PII redaction. (Always generated)
+4. **Backend**: Persistence, validations, controllers, API contract immutability, non-destructive migrations, and bounded queries (no N+1). (Generated ONLY if backend evidence is found)
+5. **Frontend**: Components, UI/UX, styling consistency, component pattern continuity, and global layout preservation. (Generated ONLY if frontend evidence is found)
 
 ### Modes of Operation
 - **Spec-Driven**: If the project has a `.spec/init/` directory (living specification), the plugin will read those formal contracts to generate the skills.
